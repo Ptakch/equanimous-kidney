@@ -1,0 +1,109 @@
+body {
+    background: url(imgs/Background1.jpg);
+    background-size: 1200px ;
+    background-repeat: no-repeat;
+}
+
+#logo1, #logo2 {
+	height: 55px;
+	width: 55px;
+}
+
+#logo1 {
+	position: absolute;
+	top: 20px;
+	left:140px ;
+}
+
+#logo2 {
+	position: absolute;
+	top: 20px;
+	right: 230px;
+}
+
+#subzerogif {
+	position: absolute;
+	top: 40px;
+	left: 140px;
+	width: 300px;
+}
+
+#scorpiongif {
+	position: absolute;
+	top: 40px;
+	right: 240px;
+	width: 300px;
+}
+
+#board{
+	width:200px;
+	position: absolute;
+	top: 72px;
+	right: 570px;
+}
+
+.tile {
+	max-width: 60px;
+	position: absolute;
+}
+
+#tile1 {
+	top: 203px;
+    right:703px;
+}
+
+#tile2 {
+	top: 140px;
+    right:703px;
+}
+#tile3 {
+	top: 78px;
+    right:703px;
+}
+
+#tile4 {
+	top: 203px;
+    right:640px;
+}
+
+#tile5 {
+	top: 140px;
+    right:640px;
+}
+#tile6 {
+	top: 78px;
+    right:640px;
+}
+
+#tile7 {
+	top: 203px;
+    right:577px;
+}
+
+#tile8 {
+	top: 140px;
+    right:577px;
+}
+#tile9 {
+	top: 78px;
+    right:577px;
+}
+
+
+#foot {
+	position:absolute;
+	top: 350px;
+	left: 0px;
+	width: 1200px;
+}
+
+.footer {
+	background-color: black;
+}
+
+.wintext {
+	display: none;
+	position: absolute;
+	top: 270px;
+	right: 572px
+}
