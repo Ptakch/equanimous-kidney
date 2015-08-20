@@ -1,10 +1,10 @@
-# Phill Site
+# Tic Tac Toey my Broey
 
 # Features
-- To be advised
+- Not many. THAT WORK.
 
 # bugs 
-- None
+- several stlying issues due to my shitness at css
 
 # thanks to
 - Me
