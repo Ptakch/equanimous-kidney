@@ -12,7 +12,7 @@ body {
 #logo1 {
 	position: absolute;
 	top: 20px;
-	left:140px ;
+	right:1050px ;
 }
 
 #logo2 {
@@ -24,7 +24,7 @@ body {
 #subzerogif {
 	position: absolute;
 	top: 40px;
-	left: 140px;
+	right: 790px;
 	width: 300px;
 }
 
@@ -106,4 +106,12 @@ body {
 	position: absolute;
 	top: 270px;
 	right: 572px
+}
+
+.draw {
+	display: none;
+	position: absolute;
+	top: 275px;
+	right: 645px;
+	color: white;
 }

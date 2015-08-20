@@ -1,7 +1,9 @@
 $(document).ready(function(){
 
 
-var player = 1;
+var player = 1; // keep track of which player to move.
+var szwincount = 0; // how many times subzero has won.
+var scwincount = 0; // how many times scorpion has won.
 
 var isEqual = function(num1, num2, num3){ // find if all conditions are true for winner.
 	var num1 = $( "#tile" + num1).attr('src');
@@ -14,11 +16,16 @@ var isEqual = function(num1, num2, num3){ // find if all conditions are true for
 					$('#subzerogif').attr('src', 'imgs/subzerowins.gif');
 					$('#scorpiongif').attr('src', 'imgs/scorpionloses.gif');
 					$('#szwins').css('display', 'block');
+					szwincount += 1;
+					
 				} else {
 					$('#scorpiongif').attr('src', 'imgs/scorpionwins2.gif');
 					$('#subzerogif').attr('src', 'imgs/subzeroloses.gif');
 					$('#scwins').css('display', 'block');
+					scwincount += 1;
+					
 				}
+			resetBoard(szwincount, scwincount);
 			return true;
 			} else {
 			return false;
@@ -27,7 +34,7 @@ var isEqual = function(num1, num2, num3){ // find if all conditions are true for
 }
 
 
-var isWon = function(){
+var isWon = function(){ // send winning combinations to isEqual
 	if (isEqual(1,2,3)){
 		console.log("winner");
 		return true;
@@ -55,22 +62,41 @@ var isWon = function(){
 	} else if (isEqual(1,4,7)){
 		console.log("winner");
 		return true;
+	} else if (player >= 9){
+		console.log("DRAW");
+		return false;
 	}
+}
+
+
+var resetBoard = function(szwincount, scwincount){
+
+	for (i = 1; i <= 9; i++){
+		$( "#tile" + i).attr('src', 'imgs/tile1.jpg');
+	}
+	console.log(szwincount + " wins to sub-zero");
+	console.log(scwincount + " wins to scorpion");
+	player = 0;
 }
 
 
 var onButtonClick = function() {
   console.log('clicked!');
-  // if class != occupied do this. *** FIX THIS SO NO OVERWRITE SQRS
+  	if ($(this).attr('src') === "imgs/tile1.jpg"){
 
-  if (player % 2 !== 0){
-  $(this).attr('src', 'imgs/MKlogo1.png');
+		  if (player % 2 !== 0){
+		  $(this).attr('src', 'imgs/MKlogo1.png');
 
-} else {
-  $(this).attr('src', 'imgs/MKlogo2.png');
-}
-isWon();
-player += 1;
+		} else {
+		  $(this).attr('src', 'imgs/MKlogo2.png');
+		}
+		var result = isWon();
+		if (result === false){ // if its a draw
+			$('.draw').css('display', 'inline');
+		}
+		player += 1;
+
+	} 
 };
 
 
