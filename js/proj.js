@@ -69,7 +69,7 @@ var isWon = function(){ // send winning combinations to isEqual
 }
 
 
-var resetBoard = function(szwincount, scwincount){
+var resetBoard = function(szwincount, scwincount){ // resets board and turn
 
 	for (i = 1; i <= 9; i++){
 		$( "#tile" + i).attr('src', 'imgs/tile1.jpg');
@@ -101,10 +101,10 @@ var onButtonClick = function() {
 
 
 
-// player A and player B. IF player = A, then logo1, else logo2
+// sets up tiles to click
 var $click1 = $('#tile1');
 $click1.click(onButtonClick);
-// $('#tile1').attr('src', 'imgs/MKlogo1.png');  <--- gets and changes img.
+
 var $click2 = $('#tile2');
 $click2.click(onButtonClick);
 
